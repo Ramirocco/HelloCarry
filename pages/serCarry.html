@@ -83,7 +83,7 @@ FECHA Y HORA PARTIDA
 
     <main>
         <section class="Cards">
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 id="tituloTarjetaCarry" class="card-title">Card title</h5>
@@ -98,8 +98,8 @@ FECHA Y HORA PARTIDA
                     <li id="precioCarry" class="list-group-item">A 5 item</li>
                 </ul>
                 <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <a href="#" class="reservarAsiento">Reservar asiento</a>
+                    <a href="#" class="verPerfilDelCarry">Ver perfil del Carry</a>
                 </div>
             </div>
         </section>
@@ -163,7 +163,7 @@ FECHA Y HORA PARTIDA
                 </div>
                 <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Ingrese texto de interes al pasajero</label>
-                    <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+                    <input id="mensajeAPasajero" type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
                 </div>
                 <div class="row">
                     <div class="form-group" style="display: none;"><input type="hidden" id="km0" name="km0" value="N">
@@ -202,10 +202,6 @@ FECHA Y HORA PARTIDA
                                 <option value="2001">2001</option>
                                 <option value="2000">2000</option>
                             </select>
-                            <p class="small mg-sm-t"><a href="#" class="link CAU-001-001" data-toggle="modal"
-                                    data-target="#Info-Modal-1">¿Qué es un 0km?</a></p>
-                            <p style="display: block;" class="error-message color-1 mg-sm-t"><i
-                                    class="fas fa-exclamation-circle"></i> Seleccione el año de fabricación</p>
                         </div>
                     </div>
                 </div>
@@ -318,41 +314,41 @@ FECHA Y HORA PARTIDA
                 </div>
                 <div class="mb-3">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck">
+                        <input id="fumar" class="form-check-input" type="checkbox" id="disabledFieldsetCheck">
                         <label class="form-check-label" for="disabledFieldsetCheck">
                             permite fumar en el auto
                         </label>
                     </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 mascota">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck">
+                        <input id="mascota"  class="form-check-input" type="checkbox" id="disabledFieldsetCheck">
                         <label class="form-check-label" for="disabledFieldsetCheck">
                             permite mascotas
                         </label>
                     </div>
                 </div>
-                <div class="mb-3">
+                <div  class="mb-3 maleta">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck">
+                        <input id="maleta" class="form-check-input" type="checkbox" id="disabledFieldsetCheck">
                         <label class="form-check-label" for="disabledFieldsetCheck">
                             permite maletas
                         </label>
                     </div>
                 </div>
-                <div class="mb-3">
+                <div  class="mb-3 paejes">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck">
+                        <input id="peajes" class="form-check-input" type="checkbox" id="disabledFieldsetCheck">
                         <label class="form-check-label" for="disabledFieldsetCheck">
                             peajes incluidos en tarifa final
                         </label>
                     </div>
                 </div>
-                <div class="input-group mb-3 row">
+                <div  class="input-group mb-3 row precioCarry">
                     <label class="label-control">Precio por pasajero</label>
                     <div class= "input-group mb-3">
                     <span class="input-group-text">$</span>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <input id="precio" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
                 </div>
             </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
