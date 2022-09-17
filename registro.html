@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    </head>
+<body>
+    aca quiero 2 botones + datos de inicio de sesion:
+    iniciar sesion, registrarse como carry, registrarse como pasajero.
+    el iniciar sesion pide : o nro de cel, o nro de dni, o usuario o email. password.
+    el registro de carry pide lo de pasajero + datos del auto.
+    el regidtro de pasajero pide: nombre completo,email,edad, dni, usuario, pasword, ciudad de residencia. y que pueda agregar acompañantes a su carryfriends
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">HelloCarry</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="A dónde ir" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./pages/serCarry.html">Ser Carry</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Quienes Somos</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Preguntas frecuentes
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Seguridad</a></li>
+                                <li><a class="dropdown-item" href="#">Cómo viajar</a></li>
+                                <li><a class="dropdown-item" href="#">tarifas</a></li>
+                                <li><a class="dropdown-item" href="#">Cómo viajar</a></li>
+                                <li><a class="dropdown-item" href="#">Ser Carry</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ">iniciar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mb-3">
+        <label for="formFile" class="form-label">ingrese foto de su vehiculo</label>
+        <input class="form-control" type="file" id="formFile">
+      </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">ingrese foto de su seguro</label>
+        <input class="form-control" type="file" id="formFile">
+      </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">ingrese foto de su registro de conducir</label>
+        <input class="form-control" type="file" id="formFile">
+      </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">ingrese foto de su documento de identidad</label>
+        <input class="form-control" type="file" id="formFile">
+      </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Ingrese foto de su rostro sin accesorios</label>
+        <input class="form-control" type="file" id="formFile">
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">ingrese su DNI</label>
+        <input class="form-control" type="text" id="DniRegistro">
+      </div>
+
+
+      <div class="col-sm-3">
+        <label class="label-control">Marca</label>
+        <div class="form-group">
+            <select id="marca" class="form-control form-error" name="marca" ="">
+                <option value="" disabled="" selected="">Seleccioná</option>
+                <optgroup label="Marcas más Buscadas">
+                    <option value="CHERY">CHERY</option>
+                    <option value="CHEVROLET">CHEVROLET</option>
+                    <option value="CHRYSLER">CHRYSLER</option>
+                    <option value="CITROEN">CITROEN</option>
+                    <option value="FIAT">FIAT</option>
+                    <option value="FORD">FORD</option>
+                    <option value="HONDA">HONDA</option>
+                    <option value="NISSAN">NISSAN</option>
+                    <option value="PEUGEOT">PEUGEOT</option>
+                    <option value="RENAULT">RENAULT</option>
+                    <option value="TOYOTA">TOYOTA</option>
+                    <option value="VOLKSWAGEN">VOLKSWAGEN</option>
+                </optgroup>
+                <optgroup label="Todas las Marcas">
+                    <option value="ALFA ROMEO">ALFA ROMEO</option>
+                    <option value="AUDI">AUDI</option>
+                    <option value="BAIC">BAIC</option>
+                    <option value="BMW">BMW</option>
+                    <option value="CHANGAN">CHANGAN</option>
+                    <option value="CHERY">CHERY</option>
+                    <option value="CHEVROLET">CHEVROLET</option>
+                    <option value="CHRYSLER">CHRYSLER</option>
+                    <option value="CITROEN">CITROEN</option>
+                    <option value="CORADIR">CORADIR</option>
+                    <option value="DAEWOO">DAEWOO</option>
+                    <option value="DAIHATSU">DAIHATSU</option>
+                    <option value="DFSK">DFSK</option>
+                    <option value="DODGE">DODGE</option>
+                    <option value="DS AUTOMOBILES">DS AUTOMOBILES</option>
+                    <option value="FERRARI">FERRARI</option>
+                    <option value="FIAT">FIAT</option>
+                    <option value="FORD">FORD</option>
+                    <option value="FOTON">FOTON</option>
+                    <option value="GEELY">GEELY</option>
+                    <option value="GREAT WALL">GREAT WALL</option>
+                    <option value="HAMATSU">HAMATSU</option>
+                    <option value="HAVAL">HAVAL</option>
+                    <option value="HONDA">HONDA</option>
+                    <option value="HYUNDAI">HYUNDAI</option>
+                    <option value="ISUZU">ISUZU</option>
+                    <option value="JAC">JAC</option>
+                    <option value="JAGUAR">JAGUAR</option>
+                    <option value="JEEP">JEEP</option>
+                    <option value="JETOUR">JETOUR</option>
+                    <option value="JIALING">JIALING</option>
+                    <option value="JINLING">JINLING</option>
+                    <option value="KIA">KIA</option>
+                    <option value="LAND ROVER">LAND ROVER</option>
+                    <option value="LEXUS">LEXUS</option>
+                    <option value="LIFAN">LIFAN</option>
+                    <option value="MAZDA">MAZDA</option>
+                    <option value="MERCEDES BENZ">MERCEDES BENZ</option>
+                    <option value="MG">MG</option>
+                    <option value="MINI">MINI</option>
+                    <option value="MITSUBISHI">MITSUBISHI</option>
+                    <option value="NISSAN">NISSAN</option>
+                    <option value="OPEL">OPEL</option>
+                    <option value="PEUGEOT">PEUGEOT</option>
+                    <option value="PORSCHE">PORSCHE</option>
+                    <option value="RANGE ROVER">RANGE ROVER</option>
+                    <option value="RENAULT">RENAULT</option>
+                    <option value="ROLLS ROYCE">ROLLS ROYCE</option>
+                    <option value="ROVER">ROVER</option>
+                    <option value="SEAT">SEAT</option>
+                    <option value="SERO ELECTRIC">SERO ELECTRIC</option>
+                    <option value="SMART">SMART</option>
+                    <option value="SOUEAST">SOUEAST</option>
+                    <option value="SSANGYONG">SSANGYONG</option>
+                    <option value="SUBARU">SUBARU</option>
+                    <option value="SUZUKI">SUZUKI</option>
+                    <option value="TAURUS">TAURUS</option>
+                    <option value="TOYOTA">TOYOTA</option>
+                    <option value="VESPA">VESPA</option>
+                    <option value="VOLKSWAGEN">VOLKSWAGEN</option>
+                    <option value="VOLVO">VOLVO</option>
+                    <option value="WRANGLER">WRANGLER</option>
+                </optgroup>
+            </select>
+            <p style="display: block;" class="error-message color-1 mg-sm-t"><i
+                    class="fas fa-exclamation-circle"></i> Seleccione la marca de su vehículo</p>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <label class="label-control">Modelo</label>
+        <div class="form-group">
+            <select class="form-control" id="modelo" name="modelo" ="">
+                <option value="" disabled="" selected="">Seleccioná</option>
+            </select>
+            <p style="display: none" class="error-message color-1 mg-sm-t"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Patente" aria-label="Patente">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Color" aria-label="Color">
+        </div>
+    </div>
+</div>
+<script src="./assets/index.js"></script>
+
+</body>
+</html>
