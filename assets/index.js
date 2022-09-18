@@ -84,7 +84,7 @@ function precioTotalCarry() {
         idUnico: asignarId,
         origen: document.getElementById("provinciaOrigen").value,
         destino: document.getElementById("provinciaDestino").value,
-        destino: document.getElementById("mensajeAPasajero").value,
+        mensaje: document.getElementById("mensajeAPasajero").value,
         fumar: document.getElementById("fumar").checked,
         mascotas: document.getElementById("mascota").checked,
         maletas: document.getElementById("maleta").checked,
