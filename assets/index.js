@@ -5,6 +5,7 @@ let formularioCarry = document.getElementById("formularioCarry");
 //variables de partes de tarjeta
 let tituloTarjetaCarry = document.getElementById("tituloTarjetaCarry");
 let mensajeCarry = document.getElementById("mensajeCarry");
+let idUnicoCarry =  document.getElementById("idUnicoCarry");
 let mascotaCarry = document.getElementById("mascotasCarry");
 let fumarCarry = document.getElementById("fumarCarry");
 let maletaCarry = document.getElementById("maletaCarry");
@@ -13,13 +14,15 @@ let precioCarry = document.getElementById("precioCarry");
 //HTMLColection
 let infoFormulario;
 let precioTotal;
+let precioParcial;
 let incluyePeajes;
-//funciones de precio a mostrar
-function precioTotalCarry() {
-    precioTotal = Number(document.getElementById("precio").value) * comision
-};
+let idUnico;
+let nuevoViaje = {};
+const arraysViajes= [ {} ]
+
 //mensajes para mostrar
-let mensajesTarjetas= {
+let mensajesTarjetas = {
+    idUnico: `El id del viaje es `,
     fumador: "usted podria fumar en el vehiculo",
     noFumador: "usted podria llevar mascotas",
     noAnimales: "usted NO podria llevar mascotas",
@@ -28,7 +31,7 @@ let mensajesTarjetas= {
     noMaleta: "usted NO podria llevar maletas",
     peaje: "Los precios incluyen los peajes y gastos",
     noPeaje: "Los precios NO incluyen los peajes y gastos",
-    precioTotal: `El precio por pasajero es de $ ${precioTotal}`,
+    precioTotal: `El precio por pasajero es de $ `,
 };
 
 //codigo ejecutable
@@ -36,12 +39,18 @@ formularioCarry.addEventListener("submit", (e) => {
     e.preventDefault();
     infoFormulario = e.target.children;
     //trayecto en tarjeta
+    let asignarId =  Math.ceil(Math.random() * 10000000  + 10000); 
     let provinciaOrigenSelec = document.getElementById("provinciaOrigen").value;
     let provinciaDestinoSelec = document.getElementById("provinciaDestino").value;
     let trayecto = `${provinciaOrigenSelec} hasta ${provinciaDestinoSelec}`;
     tituloTarjetaCarry.innerText = trayecto;
     //mensaje del usuario
     mensajeCarry.innerText = document.getElementById("mensajeAPasajero").value;
+    //asignacion de id unico
+    function AsignarId(){ idUnico = asignarId}
+        //si ese id NO se repite entonces BREACK, SI SI se repite, asigno otro 
+    AsignarId();
+    idUnicoCarry.innerText = mensajesTarjetas.idUnico +  idUnico;
     //fumar
     if (document.getElementById("fumar").checked === true) {
         fumarCarry.innerText = mensajesTarjetas.fumador;
@@ -49,7 +58,8 @@ formularioCarry.addEventListener("submit", (e) => {
     //mascota
     if (document.getElementById("mascota").checked === true) {
         mascotasCarry.innerText = mensajesTarjetas.animales;
-    } else { mascotaCarry.innerText = mensajesTarjetas.noAnimales;
+    } else {
+        mascotaCarry.innerText = mensajesTarjetas.noAnimales;
     };
     //maleta
     if (document.getElementById("maleta").checked === true) {
@@ -58,31 +68,32 @@ formularioCarry.addEventListener("submit", (e) => {
     //peajes
     if (document.getElementById("peajes").checked === true) {
         peajesCarry.innerText = mensajesTarjetas.peaje;
-    } else { peajesCarry.innerText = mensajesTarjetas.noPeaje; 
+    } else {
+        peajesCarry.innerText = mensajesTarjetas.noPeaje;
     };
     //precio
+    //funciones de precio a mostrar
+function precioTotalCarry() {
+    precioParcial = Number(document.getElementById("precio").value);
+    precioTotal = precioParcial * comision;
+};
     precioTotalCarry();
-    precioCarry.innerText = mensajesTarjetas.precioTotal;
-});
-
-//Objeto del viaje 
-
-let nuevoViaje = {
-    //id = Math.random()*1000
-    origen: document.getElementById("provinciaOrigen").value,
-    destino: document.getElementById("provinciaDestino").value,
-    fumar: document.getElementById("fumar").checked,
-    mascotas: document.getElementById("mascota").checked,
-    maletas: document.getElementById("maleta").checked,
-    peajes: document.getElementById("peajes").checked,
-    precio: Number(document.getElementById("precio").value),
+    precioCarry.innerText = mensajesTarjetas.precioTotal + precioTotal;
+    //objeto de nuevo viaje
+    nuevoViaje = {
+        idUnico: asignarId,
+        origen: document.getElementById("provinciaOrigen").value,
+        destino: document.getElementById("provinciaDestino").value,
+        destino: document.getElementById("mensajeAPasajero").value,
+        fumar: document.getElementById("fumar").checked,
+        mascotas: document.getElementById("mascota").checked,
+        maletas: document.getElementById("maleta").checked,
+        peajes: document.getElementById("peajes").checked,
+        precio: document.getElementById("precio").value,
+    }
+    console.log(nuevoViaje);
+    arraysViajes.push(nuevoViaje);
+    localStorage.setItem (`viaje ${asignarId}`, JSON.stringify (nuevoViaje));
+    localStorage.setItem (`viajes`, JSON.stringify (arraysViajes));
 }
-console.log (nuevoViaje);
-
-//prueba LOCALSTORAGE
-const dniInicio = document.getElementById(DniRegistro)
-sessionStorage.setItem
-
-
-let newArray3 = productos.map((productos) => productos.producto, productos.productos.precio * 8);
-console.log(newArray3);
+);

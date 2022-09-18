@@ -145,46 +145,6 @@ FECHA Y HORA PARTIDA
                     placeholder="Disabled input">
             </div>
             <div class="row">
-                <div class="form-group" style="display: none;"><input type="hidden" id="km0" name="km0" value="N">
-                </div>
-                <div class="form-group" style="display: none;"><input type="hidden" id="anio" name="anio" value="">
-                </div>
-                <div class="col-md-2 col-sm-3 col-xs-12">
-                    <label class="label-control">Año</label>
-                    <div class="form-group">
-                        <select class="form-control anio-selector form-error" id="anio-selector"
-                            name="anio-selector"="">
-                            <option value="" disabled="" selected="">Seleccioná</option>
-                            <!-- <option value="">2021 - 0km</option> -->
-                            <option value="new-2022">2022 - 0km</option>
-                            <option value="2022">2022</option>
-                            <option value="2021">2021</option>
-                            <option value="2020">2020</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
-                            <option value="2017">2017</option>
-                            <option value="2016">2016</option>
-                            <option value="2015">2015</option>
-                            <option value="2014">2014</option>
-                            <option value="2013">2013</option>
-                            <option value="2012">2012</option>
-                            <option value="2011">2011</option>
-                            <option value="2010">2010</option>
-                            <option value="2009">2009</option>
-                            <option value="2008">2008</option>
-                            <option value="2007">2007</option>
-                            <option value="2006">2006</option>
-                            <option value="2005">2005</option>
-                            <option value="2004">2004</option>
-                            <option value="2003">2003</option>
-                            <option value="2002">2002</option>
-                            <option value="2001">2001</option>
-                            <option value="2000">2000</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
 
                 <div class="mb-3">
                     <div class="form-check">
@@ -227,7 +187,7 @@ FECHA Y HORA PARTIDA
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <section class="Cards">
+        <section  class="CardsViaje">
             <div class="card" style="width: 18rem">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
@@ -235,6 +195,7 @@ FECHA Y HORA PARTIDA
                     <p id="mensajeCarry" class="card-text">Mensaje al pasajero</p>
                 </div>
                 <ul class="list-group list-group-flush">
+                    <li id="idUnicoCarry" class="list-group-item">ID</li>
                     <li id="fumarCarry" class="list-group-item">Politica sobre fumar</li>
                     <li id="mascotasCarry" class="list-group-item">Politica sobre mascotas</li>
                     <li id="maletasCarry" class="list-group-item">Politica sobre maletas</li>
