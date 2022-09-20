@@ -1,0 +1,11 @@
+@import url(../scss/base/_reset.scss);
+@import url(../scss/base/_fuentes.scss);
+@import url(../scss/base/_all.scss);
+@import url(../scss/layout/_footer.scss);
+@import url(../scss/layout/_header.scss);
+@import url(../scss/layout/_aside.scss);
+@import url(../scss/layout/_mainIndex.scss);
+@import url(../scss/layout/_mainSerCarry.scss);
+@import url(../scss/components/_buttons.scss);
+@import url(../scss/utilities/_mixins.scss);
+@import url(../scss/utilities/_variables.scss);/*# sourceMappingURL=style.css.map */

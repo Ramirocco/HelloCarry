@@ -2,6 +2,7 @@
 const comision = 1.15;
 //form
 let formularioCarry = document.getElementById("formularioCarry");
+let subirViaje = document.getElementById("subirViaje");
 //variables de partes de tarjeta
 let tituloTarjetaCarry = document.getElementById("tituloTarjetaCarry");
 let mensajeCarry = document.getElementById("mensajeCarry");
@@ -97,3 +98,29 @@ function precioTotalCarry() {
     localStorage.setItem (`viajes`, JSON.stringify (arraysViajes));
 }
 );
+//PROGRAMAR QUE AL ACEPTAR EL VIAJE SE MANDE UNA NUEVA TARJETA A INDEX
+subirViaje.addEventListener("click", (e) => {
+alert ("su viaje fue cargado con éxito");
+let tarjetaNueva = document.createElement (div)
+tarjetaNueva.innerHTML =`"<div class="card" style="width: 18rem">
+<img src="..." class="card-img-top" alt="...">
+<div class="card-body">
+    <h5 id="tituloTarjetaCarry" class="card-title">Trayecto del viaje</h5>
+    <p id="mensajeCarry" class="card-text">Mensaje al pasajero</p>
+</div>
+<ul class="list-group list-group-flush">
+    <li id="idUnicoCarry" class="list-group-item">ID</li>
+    <li id="fumarCarry" class="list-group-item">Politica sobre fumar</li>
+    <li id="mascotasCarry" class="list-group-item">Politica sobre mascotas</li>
+    <li id="maletasCarry" class="list-group-item">Politica sobre maletas</li>
+    <li id="peajesCarry" class="list-group-item">Politica sobre peajes</li>
+    <li id="precioCarry" class="list-group-item">Politica sobre gastos</li>
+</ul>
+<div class="card-body">
+    <a href="#" class="reservarAsiento">Reservar asiento</a>
+    <a href="#" class="verPerfilDelCarry">Ver perfil del Carry</a>
+</div>
+</div>
+<button id="subirViaje">Subir Viaje</button>`;
+document.body.append(subirViaje);
+});
