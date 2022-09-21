@@ -140,6 +140,107 @@ FECHA Y HORA PARTIDA
                 </select>
             </div>
             <div class="mb-3">
+                <label for="diaSalida">Dia de salida</label>
+                <input id="diaSalida" type="date"  name="trip-start"
+                value="2018-07-22"
+                min="2022-09-20" max="2023-12-31">
+            </div>
+            <div class="mb-3">
+                <label for="disabledSelect" class="form-label">Seleccione Hora de Salida</label>
+                <select id="horaSalida">
+                    <option value="00:00h">00:00h</option>
+                    <option value="00:30h">00:30h</option>
+                    <option value="01:00h">01:00h</option>
+                    <option value="01:30h">01:30h</option>
+                    <option value="02:00h">02:00h</option>
+                    <option value="02:30h">02:30h</option>
+                    <option value="03:00h">03:00h</option>
+                    <option value="03:30h">03:30h</option>
+                    <option value="04:00h">04:00h</option>
+                    <option value="04:30h">04:30h</option>
+                    <option value="05:00h">05:00h</option>
+                    <option value="05:30h">05:30h</option>
+                    <option value="06:00h">06:00h</option>
+                    <option value="06:30h">06:30h</option>
+                    <option value="07:00h">07:00h</option>
+                    <option value="07:30h">07:30h</option>
+                    <option value="08:00h">08:00h</option>
+                    <option value="08:30h">08:30h</option>
+                    <option value="09:00h">09:00h</option>
+                    <option value="09:30h">09:30h</option>
+                    <option value="10:00h">10:00h</option>
+                    <option value="10:30h">10:30h</option>
+                    <option value="11:00h">11:00h</option>
+                    <option value="11:30h">11:30h</option>
+                    <option value="12:00h">12:00h</option>
+                    <option value="12:30h">12:30h</option>
+                    <option value="13:00h">13:00h</option>
+                    <option value="13:30h">13:30h</option>
+                    <option value="14:30h">14:30h</option>
+                    <option value="15:00h">15:00h</option>
+                    <option value="16:30h">16:30h</option>
+                    <option value="17:00h">17:00h</option>
+                    <option value="18:30h">18:30h</option>
+                    <option value="19:00h">19:00h</option>
+                    <option value="20:30h">20:30h</option>
+                    <option value="21:00h">21:00h</option>
+                    <option value="21:30h">21:30h</option>
+                    <option value="22:00h">22:00h</option>
+                    <option value="22:30h">22:30h</option>
+                    <option value="23:00h">23:00h</option>
+                    <option value="23:30h">23:30h</option>
+                    <option disabled="true" selected="true" value="">Seleccionar una Hora de Salida</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="disabledSelect" class="form-label">Seleccionar una Hora de Llegada estimada</label>
+                <select id="horaLlegada">
+                    <option value="00:00h">00:00h</option>
+                    <option value="00:30h">00:30h</option>
+                    <option value="01:00h">01:00h</option>
+                    <option value="01:30h">01:30h</option>
+                    <option value="02:00h">02:00h</option>
+                    <option value="02:30h">02:30h</option>
+                    <option value="03:00h">03:00h</option>
+                    <option value="03:30h">03:30h</option>
+                    <option value="04:00h">04:00h</option>
+                    <option value="04:30h">04:30h</option>
+                    <option value="05:00h">05:00h</option>
+                    <option value="05:30h">05:30h</option>
+                    <option value="06:00h">06:00h</option>
+                    <option value="06:30h">06:30h</option>
+                    <option value="07:00h">07:00h</option>
+                    <option value="07:30h">07:30h</option>
+                    <option value="08:00h">08:00h</option>
+                    <option value="08:30h">08:30h</option>
+                    <option value="09:00h">09:00h</option>
+                    <option value="09:30h">09:30h</option>
+                    <option value="10:00h">10:00h</option>
+                    <option value="10:30h">10:30h</option>
+                    <option value="11:00h">11:00h</option>
+                    <option value="11:30h">11:30h</option>
+                    <option value="12:00h">12:00h</option>
+                    <option value="12:30h">12:30h</option>
+                    <option value="13:00h">13:00h</option>
+                    <option value="13:30h">13:30h</option>
+                    <option value="14:30h">14:30h</option>
+                    <option value="15:00h">15:00h</option>
+                    <option value="16:30h">16:30h</option>
+                    <option value="17:00h">17:00h</option>
+                    <option value="18:30h">18:30h</option>
+                    <option value="19:00h">19:00h</option>
+                    <option value="20:30h">20:30h</option>
+                    <option value="21:00h">21:00h</option>
+                    <option value="21:30h">21:30h</option>
+                    <option value="22:00h">22:00h</option>
+                    <option value="22:30h">22:30h</option>
+                    <option value="23:00h">23:00h</option>
+                    <option value="23:30h">23:30h</option>
+                    <option disabled="true" selected="true" value="">Seleccionar una Hora de Llegada estimada</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
                 <label for="disabledTextInput" class="form-label">Ingrese texto de interes al pasajero</label>
                 <input id="mensajeAPasajero" type="text" id="disabledTextInput" class="form-control"
                     placeholder="Disabled input">
@@ -195,6 +296,9 @@ FECHA Y HORA PARTIDA
                     <p id="mensajeCarry" class="card-text">Mensaje al pasajero</p>
                 </div>
                 <ul class="list-group list-group-flush">
+                    <li id="diaSalidaCarry" class="list-group-item">Dia de salida</li>
+                    <li id="horaSalidaCarry" class="list-group-item">Hora de salida</li>
+                    <li id="horaLlegadaCarry" class="list-group-item">Hora de llegada</li>
                     <li id="idUnicoCarry" class="list-group-item">ID</li>
                     <li id="fumarCarry" class="list-group-item">Politica sobre fumar</li>
                     <li id="mascotasCarry" class="list-group-item">Politica sobre mascotas</li>
@@ -217,5 +321,6 @@ FECHA Y HORA PARTIDA
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script> -->
 <script src="../assets/index.js"></script>
+<script src="../assets/inicio.js"></script>
 
 </html>

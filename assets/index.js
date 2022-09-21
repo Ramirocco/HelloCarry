@@ -19,13 +19,13 @@ let precioParcial;
 let incluyePeajes;
 let idUnico;
 let nuevoViaje = {};
-const arraysViajes= [ {} ]
+const arraysViajes= [ {} ];
 
 //mensajes para mostrar
 let mensajesTarjetas = {
     idUnico: `El id del viaje es `,
     fumador: "usted podria fumar en el vehiculo",
-    noFumador: "usted podria llevar mascotas",
+    noFumador: "usted NO podria fumar en el vehiculo",
     noAnimales: "usted NO podria llevar mascotas",
     animales: "usted podria llevar animales",
     maleta: "usted podria llevar maleta",
@@ -33,6 +33,10 @@ let mensajesTarjetas = {
     peaje: "Los precios incluyen los peajes y gastos",
     noPeaje: "Los precios NO incluyen los peajes y gastos",
     precioTotal: `El precio por pasajero es de $ `,
+    horaSalida: `El Carry saldrá a las `,
+    diaSalida: `El Carry saldrá el dia `,
+
+    horaLlegada: `El Carry llegará a las `,
 };
 
 //codigo ejecutable
@@ -45,17 +49,25 @@ formularioCarry.addEventListener("submit", (e) => {
     let provinciaDestinoSelec = document.getElementById("provinciaDestino").value;
     let trayecto = `${provinciaOrigenSelec} hasta ${provinciaDestinoSelec}`;
     tituloTarjetaCarry.innerText = trayecto;
+    //Horarios
+    let horaSalida = document.getElementById("horaSalida").value;
+    let horaLlegada = document.getElementById("horaLlegada").value;
+    horaSalidaCarry.innerText = mensajesTarjetas.horaLlegada + horaSalida;
+    horaLlegadaCarry.innerText = mensajesTarjetas.horaSalida + horaLlegada;
+    //dia salida
+    let diaSalida = document.getElementById("diaSalida").value;
+    diaSalidaCarry.innerText = mensajesTarjetas.diaSalida + diaSalida;
     //mensaje del usuario
     mensajeCarry.innerText = document.getElementById("mensajeAPasajero").value;
     //asignacion de id unico
-    function AsignarId(){ idUnico = asignarId}
+    function AsignarId(){ idUnico = asignarId};
         //si ese id NO se repite entonces BREACK, SI SI se repite, asigno otro 
     AsignarId();
     idUnicoCarry.innerText = mensajesTarjetas.idUnico +  idUnico;
     //fumar
     if (document.getElementById("fumar").checked === true) {
         fumarCarry.innerText = mensajesTarjetas.fumador;
-    } else { fumarCarry.innerText = mensajesTarjetas.noFumador }
+    } else { fumarCarry.innerText = mensajesTarjetas.noFumador };
     //mascota
     if (document.getElementById("mascota").checked === true) {
         mascotasCarry.innerText = mensajesTarjetas.animales;
@@ -65,7 +77,7 @@ formularioCarry.addEventListener("submit", (e) => {
     //maleta
     if (document.getElementById("maleta").checked === true) {
         maletasCarry.innerText = mensajesTarjetas.maleta;
-    } else { maletasCarry.innerText = mensajesTarjetas.noMaleta }
+    } else { maletasCarry.innerText = mensajesTarjetas.noMaleta };
     //peajes
     if (document.getElementById("peajes").checked === true) {
         peajesCarry.innerText = mensajesTarjetas.peaje;
@@ -85,6 +97,9 @@ function precioTotalCarry() {
         idUnico: asignarId,
         origen: document.getElementById("provinciaOrigen").value,
         destino: document.getElementById("provinciaDestino").value,
+        diaSalida: document.getElementById("diaSalida").value,
+        horaSalida: document.getElementById("horaSalida").value,
+        horaLlegada: document.getElementById("horaLlegada").value,
         mensaje: document.getElementById("mensajeAPasajero").value,
         fumar: document.getElementById("fumar").checked,
         mascotas: document.getElementById("mascota").checked,
@@ -98,29 +113,4 @@ function precioTotalCarry() {
     localStorage.setItem (`viajes`, JSON.stringify (arraysViajes));
 }
 );
-//PROGRAMAR QUE AL ACEPTAR EL VIAJE SE MANDE UNA NUEVA TARJETA A INDEX
-subirViaje.addEventListener("click", (e) => {
-alert ("su viaje fue cargado con éxito");
-let tarjetaNueva = document.createElement (div)
-tarjetaNueva.innerHTML =`"<div class="card" style="width: 18rem">
-<img src="..." class="card-img-top" alt="...">
-<div class="card-body">
-    <h5 id="tituloTarjetaCarry" class="card-title">Trayecto del viaje</h5>
-    <p id="mensajeCarry" class="card-text">Mensaje al pasajero</p>
-</div>
-<ul class="list-group list-group-flush">
-    <li id="idUnicoCarry" class="list-group-item">ID</li>
-    <li id="fumarCarry" class="list-group-item">Politica sobre fumar</li>
-    <li id="mascotasCarry" class="list-group-item">Politica sobre mascotas</li>
-    <li id="maletasCarry" class="list-group-item">Politica sobre maletas</li>
-    <li id="peajesCarry" class="list-group-item">Politica sobre peajes</li>
-    <li id="precioCarry" class="list-group-item">Politica sobre gastos</li>
-</ul>
-<div class="card-body">
-    <a href="#" class="reservarAsiento">Reservar asiento</a>
-    <a href="#" class="verPerfilDelCarry">Ver perfil del Carry</a>
-</div>
-</div>
-<button id="subirViaje">Subir Viaje</button>`;
-document.body.append(subirViaje);
-});
+
