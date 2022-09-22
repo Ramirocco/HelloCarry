@@ -57,11 +57,11 @@ class Viaje {
 
 //funcion recuperar datos
 //recupero el viaje
-const cargados = JSON.parse(localStorage.getItem("viajes"));
-const viajesCargados = [];
+let cargados = JSON.parse(localStorage.getItem("viajes"));
+let viajesCargados = [];
 tarjetasEnHTML = document.querySelector ("#tarjetear");
 //crear objeto por cada uno
-for (const viaje of cargados)
+for (let viaje of cargados)
     viajesCargados.push(new Viaje(viaje));
 //funcion escrbir el codigo hacia la nueva pagina
 function cargarTarjeta (){

@@ -2,7 +2,6 @@
 const comision = 1.15;
 //form
 let formularioCarry = document.getElementById("formularioCarry");
-let subirViaje = document.getElementById("subirViaje");
 //variables de partes de tarjeta
 let tituloTarjetaCarry = document.getElementById("tituloTarjetaCarry");
 let mensajeCarry = document.getElementById("mensajeCarry");
@@ -19,7 +18,7 @@ let precioParcial;
 let incluyePeajes;
 let idUnico;
 let nuevoViaje = {};
-const arraysViajes= [ {} ];
+let arraysViajes= [ {} ];
 
 //mensajes para mostrar
 let mensajesTarjetas = {
