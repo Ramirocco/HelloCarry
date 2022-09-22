@@ -1,7 +1,7 @@
 // aca teno que poner que arme  las tarjetas desde el localstorage
-let subirViaje = document.getElementById("subirViaje");
-const comision = 1.15;
-let mensajesTarjetas = {
+
+const comision1 = 1.15;
+let mensajesTarjetas1 = {
     idUnico: `El id del viaje es `,
     fumador: "usted podria fumar en el vehiculo",
     noFumador: "usted NO podria fumar en el vehiculo",
@@ -29,29 +29,29 @@ class Viaje {
         this.diaLlegada = `El carry legará el dia ` + obj.diaLlegada;
         this.mensaje = obj.mensaje;
         if (obj.fumar == "true") {
-            this.maletas = mensajesTarjetas.fumador
+            this.maletas = mensajesTarjetas1.fumador
         } else {
-            this.maletas = mensajesTarjetas.noFumador
+            this.maletas = mensajesTarjetas1.noFumador
         };
         //mascota
         if (obj.mascota == "true") {
-            this.mascotas = mensajesTarjetas.animales;
+            this.mascotas = mensajesTarjetas1.animales;
         } else {
-            this.mascotas = mensajesTarjetas.noAnimales;
+            this.mascotas = mensajesTarjetas1.noAnimales;
         };
         //maleta
         if (obj.maleta == "true") {
-            this.maletas = mensajesTarjetas.maleta;
-        } else { this.maletas = mensajesTarjetas.noMaleta
+            this.maletas = mensajesTarjetas1.maleta;
+        } else { this.maletas = mensajesTarjetas1.noMaleta
         };
         //peajes
         if (obj.peajes == "true") {
-            this.peajes = mensajesTarjetas.peaje;
+            this.peajes = mensajesTarjetas1.peaje;
         } else {
-            this.peajes = mensajesTarjetas.noPeaje;
+            this.peajes = mensajesTarjetas1.noPeaje;
         };
         //
-        this.precio = Number(obj.precio)* comision
+        this.precio = Number(obj.precio)* comision1 ;
     }
 }
 
@@ -59,7 +59,7 @@ class Viaje {
 //recupero el viaje
 let cargados = JSON.parse(localStorage.getItem("viajes"));
 let viajesCargados = [];
-tarjetasEnHTML = document.querySelector ("#tarjetear");
+tarjetasEnHTML = document.getElementById("tarjetear");
 //crear objeto por cada uno
 for (let viaje of cargados)
     viajesCargados.push(new Viaje(viaje));
@@ -92,8 +92,8 @@ for (viaje of viajesCargados) {
 </section>`
 tarjetasEnHTML.innerText =+ viajeEnTarjetaIndex;
 }
-}
-
-subirViaje.addEventListener("click", () => { cargarTarjeta()});
-
+};
+document.onload = () => { let subirnuevo = document.getElementById("subirnuevo");
+subirnuevo.addEventListener(`click`, () => { cargarTarjeta();});
+alert("cambios aplicados");}
 //PROGRAMAR QUE AL ACEPTAR EL VIAJE SE MANDE UNA NUEVA TARJETA A INDEX
