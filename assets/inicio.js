@@ -1,6 +1,7 @@
 // aca teno que poner que arme  las tarjetas desde el localstorage
 
 const comision1 = 1.15;
+
 let mensajesTarjetas1 = {
     idUnico: `El id del viaje es `,
     fumador: "usted podria fumar en el vehiculo",
@@ -28,30 +29,16 @@ class Viaje {
         this.diaSalida = `El carry saldrá el dia ` + obj.diaSalida;
         this.diaLlegada = `El carry legará el dia ` + obj.diaLlegada;
         this.mensaje = obj.mensaje;
-        if (obj.fumar == "true") {
-            this.maletas = mensajesTarjetas1.fumador
-        } else {
-            this.maletas = mensajesTarjetas1.noFumador
-        };
+        //if optimizado
+        obj.fumar == "true" ? this.maletas = mensajesTarjetas1.fumador : this.maletas = mensajesTarjetas1.noFumador;
         //mascota
-        if (obj.mascota == "true") {
-            this.mascotas = mensajesTarjetas1.animales;
-        } else {
-            this.mascotas = mensajesTarjetas1.noAnimales;
-        };
+        obj.mascota == "true" ? this.mascotas = mensajesTarjetas1.animales : this.mascotas = mensajesTarjetas1.noAnimales;
         //maleta
-        if (obj.maleta == "true") {
-            this.maletas = mensajesTarjetas1.maleta;
-        } else { this.maletas = mensajesTarjetas1.noMaleta
-        };
+        obj.maleta == "true" ? this.maletas = mensajesTarjetas1.maleta : this.maletas = mensajesTarjetas1.noMaleta;
         //peajes
-        if (obj.peajes == "true") {
-            this.peajes = mensajesTarjetas1.peaje;
-        } else {
-            this.peajes = mensajesTarjetas1.noPeaje;
-        };
+        obj.peajes == "true" ? this.peajes = mensajesTarjetas1.peaje : this.peajes = mensajesTarjetas1.noPeaje;
         //
-        this.precio = Number(obj.precio)* comision1 ;
+        this.precio = Number(obj.precio) * comision1;
     }
 }
 
@@ -64,9 +51,9 @@ tarjetasEnHTML = document.getElementById("tarjetear");
 for (let viaje of cargados)
     viajesCargados.push(new Viaje(viaje));
 //funcion escrbir el codigo hacia la nueva pagina
-function cargarTarjeta (){
-for (viaje of viajesCargados) { 
-    let viajeEnTarjetaIndex = `<section  class="CardsViaje">
+function cargarTarjeta() {
+    for (viaje of viajesCargados) {
+        let viajeEnTarjetaIndex = `<section  class="CardsViaje">
     <div class="card" style="width: 18rem">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
@@ -90,10 +77,12 @@ for (viaje of viajesCargados) {
         </div>
     </div>
 </section>`
-tarjetasEnHTML.innerText =+ viajeEnTarjetaIndex;
-}
+        tarjetasEnHTML.innerText = + viajeEnTarjetaIndex;
+    }
 };
-document.onload = () => { let subirnuevo = document.getElementById("subirnuevo");
-subirnuevo.addEventListener(`click`, () => { cargarTarjeta();});
-alert("cambios aplicados");}
+document.onload = () => {
+    let subirnuevo = document.getElementById("subirnuevo");
+    subirnuevo.addEventListener(`click`, () => { cargarTarjeta(); });
+    alert("cambios aplicados");
+}
 //PROGRAMAR QUE AL ACEPTAR EL VIAJE SE MANDE UNA NUEVA TARJETA A INDEX

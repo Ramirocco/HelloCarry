@@ -64,25 +64,13 @@ formularioCarry.addEventListener("submit", (e) => {
     AsignarId();
     idUnicoCarry.innerText = mensajesTarjetas.idUnico +  idUnico;
     //fumar
-    if (document.getElementById("fumar").checked === true) {
-        fumarCarry.innerText = mensajesTarjetas.fumador;
-    } else { fumarCarry.innerText = mensajesTarjetas.noFumador };
+    document.getElementById("fumar").checked ? fumarCarry.innerText = mensajesTarjetas.fumador: fumarCarry.innerText = mensajesTarjetas.noFumador ;
     //mascota
-    if (document.getElementById("mascota").checked === true) {
-        mascotasCarry.innerText = mensajesTarjetas.animales;
-    } else {
-        mascotaCarry.innerText = mensajesTarjetas.noAnimales;
-    };
+    document.getElementById("mascota").checked ? mascotasCarry.innerText = mensajesTarjetas.animales: mascotaCarry.innerText = mensajesTarjetas.noAnimales;
     //maleta
-    if (document.getElementById("maleta").checked === true) {
-        maletasCarry.innerText = mensajesTarjetas.maleta;
-    } else { maletasCarry.innerText = mensajesTarjetas.noMaleta };
+    document.getElementById("maleta").checked ? maletasCarry.innerText = mensajesTarjetas.maleta :maletasCarry.innerText = mensajesTarjetas.noMaleta ;
     //peajes
-    if (document.getElementById("peajes").checked === true) {
-        peajesCarry.innerText = mensajesTarjetas.peaje;
-    } else {
-        peajesCarry.innerText = mensajesTarjetas.noPeaje;
-    };
+    document.getElementById("peajes").checked ? peajesCarry.innerText = mensajesTarjetas.peaje :peajesCarry.innerText = mensajesTarjetas.noPeaje;
     //precio
     //funciones de precio a mostrar
 function precioTotalCarry() {
