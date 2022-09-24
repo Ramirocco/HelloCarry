@@ -1,6 +1,7 @@
 //Variables y constantes
 const comision = 1.15;
 //form
+console.log (document);
 let formularioCarry = document.getElementById("formularioCarry");
 //variables de partes de tarjeta
 let tituloTarjetaCarry = document.getElementById("tituloTarjetaCarry");
@@ -18,7 +19,7 @@ let precioParcial;
 let incluyePeajes;
 let idUnico;
 let nuevoViaje = {};
-let arraysViajes= [ {} ];
+let arraysViajes= [];
 
 //mensajes para mostrar
 let mensajesTarjetas = {
@@ -98,6 +99,17 @@ function precioTotalCarry() {
     arraysViajes.push(nuevoViaje);
     localStorage.setItem (`viaje ${asignarId}`, JSON.stringify (nuevoViaje));
     localStorage.setItem (`viajes`, JSON.stringify (arraysViajes));
+    console.log (arraysViajes);
+    console.log (nuevoViaje);
+    // agrego info de subida
+    Swal.fire({
+        title: 'Casi listos, Carry',
+        text: "no olvides checkear y subir tu viaje",
+        icon: 'info',
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'entendido Bro'
+    })
 }
 );
 

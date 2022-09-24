@@ -52,7 +52,9 @@ for (let viaje of cargados)
     viajesCargados.push(new Viaje(viaje));
 //funcion escrbir el codigo hacia la nueva pagina
 function cargarTarjeta() {
+    console.log(viajesCargados);
     for (viaje of viajesCargados) {
+        console.log(viaje);
         let viajeEnTarjetaIndex = `<section  class="CardsViaje">
     <div class="card" style="width: 18rem">
         <img src="..." class="card-img-top" alt="...">
@@ -77,12 +79,15 @@ function cargarTarjeta() {
         </div>
     </div>
 </section>`
+        console.log(viajeEnTarjetaIndex);
+        console.log(tarjetasEnHTML);
         tarjetasEnHTML.innerText = + viajeEnTarjetaIndex;
     }
 };
-document.onload = () => {
-    let subirnuevo = document.getElementById("subirnuevo");
-    subirnuevo.addEventListener(`click`, () => { cargarTarjeta(); });
-    alert("cambios aplicados");
-}
+
+let subirnuevo = document.getElementById("subirnuevo");
+console.log(subirnuevo)
+subirnuevo.addEventListener(`click`, () => { cargarTarjeta(); });
+alert("cambios aplicados");
+
 //PROGRAMAR QUE AL ACEPTAR EL VIAJE SE MANDE UNA NUEVA TARJETA A INDEX
