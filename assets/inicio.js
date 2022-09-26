@@ -46,7 +46,7 @@ class Viaje {
 //recupero el viaje
 let cargados = JSON.parse(localStorage.getItem("viajes"));
 let viajesCargados = [];
-tarjetasEnHTML = document.getElementById("tarjetear");
+
 //crear objeto por cada uno
 for (let viaje of cargados)
     viajesCargados.push(new Viaje(viaje));
@@ -78,7 +78,8 @@ function cargarTarjeta() {
             <a href="#" class="verPerfilDelCarry">Ver perfil del Carry</a>
         </div>
     </div>
-</section>`
+</section>`;
+        let tarjetasEnHTML = document.getElementById("tarjetear");
         console.log(viajeEnTarjetaIndex);
         console.log(tarjetasEnHTML);
         tarjetasEnHTML.innerText = + viajeEnTarjetaIndex;
@@ -86,8 +87,17 @@ function cargarTarjeta() {
 };
 
 let subirnuevo = document.getElementById("subirnuevo");
-console.log(subirnuevo)
-subirnuevo.addEventListener(`click`, () => { cargarTarjeta(); });
-alert("cambios aplicados");
+console.log(subirnuevo);
+
+subirnuevo.addEventListener(`click`, () => {  cargarTarjeta();     
+     Swal.fire({
+     title: 'Ahora si, Carry',
+     text: "a esperar pasajeros",
+     icon: 'success',
+     showCancelButton: false,
+     confirmButtonColor: '#3085d6',
+     confirmButtonText: 'Genial, Paaa'
+ }); });
+
 
 //PROGRAMAR QUE AL ACEPTAR EL VIAJE SE MANDE UNA NUEVA TARJETA A INDEX
