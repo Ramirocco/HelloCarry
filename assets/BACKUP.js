@@ -67,9 +67,9 @@ formularioCarry.addEventListener("submit", (e) => {
     //fumar
     document.getElementById("fumar").checked ? fumarCarry.innerText = mensajesTarjetas.fumador: fumarCarry.innerText = mensajesTarjetas.noFumador ;
     //mascota
-    document.getElementById("mascota").checked ? mascotasCarry.innerText = mensajesTarjetas.animales: mascotaCarry.innerText = mensajesTarjetas.noAnimales;
+    document.getElementById("mascota").checked ? mascotasCarry.innerText = mensajesTarjetas.animales: mascotasCarry.innerText = mensajesTarjetas.noAnimales;
     //maleta
-    document.getElementById("maleta").checked ? maletasCarry.innerText = mensajesTarjetas.maleta :maletasCarry.innerText = mensajesTarjetas.noMaleta ;
+    document.getElementById("maleta").checked ? maletaCarry.innerText = mensajesTarjetas.maleta :maletaCarry.innerText = mensajesTarjetas.noMaleta ;
     //peajes
     document.getElementById("peajes").checked ? peajesCarry.innerText = mensajesTarjetas.peaje :peajesCarry.innerText = mensajesTarjetas.noPeaje;
     //precio

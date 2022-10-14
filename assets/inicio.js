@@ -3,7 +3,6 @@
 const comision1 = 1.15;
 
 let mensajesTarjetas1 = {
-    idUnico: `El id del viaje es `,
     fumador: "usted podria fumar en el vehiculo",
     noFumador: "usted NO podria fumar en el vehiculo",
     noAnimales: "usted NO podria llevar mascotas",
@@ -15,8 +14,6 @@ let mensajesTarjetas1 = {
     precioTotal: `El precio por pasajero es de $ `,
     horaSalida: `El Carry saldrá a las `,
     diaSalida: `El Carry saldrá el dia `,
-
-    horaLlegada: `El Carry llegará a las `,
 };
 
 
@@ -45,11 +42,14 @@ class Viaje {
 //funcion recuperar datos
 //recupero el viaje
 let cargados = JSON.parse(localStorage.getItem("viajes"));
-let viajesCargados = [];
+let viajesCargados = [ {"idUnico":2779539,"origen":"BUENOS AIRES","destino":"SAN LUIS","diaSalida":"2018-07-22","horaSalida":"12:20","horaLlegada":"13:30","mensaje":"Voy tranquilo","fumar":false,"mascotas":false,"maletas":false,"peajes":false,"precio":"15"},];
+let viaje;
+        let tarjetasEnHTML = document.getElementById("tarjetear");
+//SUBIR VIAJE A VIAJES PARA QUE ITERE
 
 //crear objeto por cada uno
-for (let viaje of cargados)
-    viajesCargados.push(new Viaje(viaje));
+for (let viaje of cargados){
+    viajesCargados.push(new Viaje(viaje));};
 //funcion escrbir el codigo hacia la nueva pagina
 function cargarTarjeta() {
     console.log(viajesCargados);
@@ -68,9 +68,9 @@ function cargarTarjeta() {
             <li id="horaLlegadaCarry" class="list-group-item">${viaje.horaLlegada}/li>
             <li id="idUnicoCarry" class="list-group-item">${viaje.id}</li>
             <li id="fumarCarry" class="list-group-item">${viaje.fumar}</li>
-            <li id="mascotasCarry" class="list-group-item">${viaje.mascotas}</li>
-            <li id="maletasCarry" class="list-group-item">P${viaje.maletas}</li>
-            <li id="peajesCarry" class="list-group-item">${viaje.peajes}</li>
+            <li id="mascotaCarry" class="list-group-item">${viaje.mascotas}</li>
+            <li id="maletaCarry" class="list-group-item">P${viaje.maletas}</li>
+            <li id="peajeCarry" class="list-group-item">${viaje.peajes}</li>
             <li id="precioCarry" class="list-group-item">${viaje.precio}</li>
         </ul>
         <div class="card-body">
@@ -79,25 +79,27 @@ function cargarTarjeta() {
         </div>
     </div>
 </section>`;
-        let tarjetasEnHTML = document.getElementById("tarjetear");
+
         console.log(viajeEnTarjetaIndex);
         console.log(tarjetasEnHTML);
-        tarjetasEnHTML.innerText = + viajeEnTarjetaIndex;
+        tarjetasEnHTML.innerHTML = + viajeEnTarjetaIndex;
     }
 };
 
 let subirnuevo = document.getElementById("subirnuevo");
 console.log(subirnuevo);
 
-subirnuevo.addEventListener(`click`, () => {  cargarTarjeta();     
-     Swal.fire({
-     title: 'Ahora si, Carry',
-     text: "a esperar pasajeros",
-     icon: 'success',
-     showCancelButton: false,
-     confirmButtonColor: '#3085d6',
-     confirmButtonText: 'Genial, Paaa'
- }); });
+subirnuevo.addEventListener(`click`, () => {
+    cargarTarjeta();
+    Swal.fire({
+        title: 'Ahora si, Carry',
+        text: "a esperar pasajeros",
+        icon: 'success',
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Genial, Paaa'
+    });
+});
 
 
 //PROGRAMAR QUE AL ACEPTAR EL VIAJE SE MANDE UNA NUEVA TARJETA A INDEX
